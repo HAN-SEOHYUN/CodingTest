@@ -7,10 +7,3 @@
 /dataSources/
 /dataSources.local.xml
 
-/bin/
-.settings/
-.classpath
-.project
-.idea/
-.iml
-CodingTest/

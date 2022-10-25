@@ -2,6 +2,7 @@ package com.CodingTest.Programmers.level1;
 
 import java.util.ArrayList;
 
+//약수의 합 구하기
 public class addDivisors {
     //약수 구하기
     public static ArrayList<Integer> findDivisor(int num) {
