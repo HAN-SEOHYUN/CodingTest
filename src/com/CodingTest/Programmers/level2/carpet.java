@@ -1,8 +1,5 @@
 package com.CodingTest.Programmers.level2;
 
-import java.util.ArrayList;
-
-//brown = yello +2
 public class carpet {
 
     public int[] solution(int brown, int yellow) {
@@ -19,7 +16,6 @@ public class carpet {
                 return answer;
             }
         }
-
         return answer;
     }
 }
