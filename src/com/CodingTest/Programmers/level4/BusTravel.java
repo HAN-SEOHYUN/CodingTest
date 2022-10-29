@@ -1,5 +1,6 @@
 package com.CodingTest.Programmers.level4;
 
+//버스정류장
 public class BusTravel {
     public static int[][] solution(int n, int[][] signs) {
         int[][] answer = new int[signs.length][signs[0].length];
