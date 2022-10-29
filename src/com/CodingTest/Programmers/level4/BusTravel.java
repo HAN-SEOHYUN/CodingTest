@@ -2,33 +2,40 @@ package com.CodingTest.Programmers.level4;
 
 //버스정류장
 public class BusTravel {
+    static int size;
+    static int[][] answer;
+    static int[][] data;
+    static int[] bool;
+
     public static int[][] solution(int n, int[][] signs) {
-        int[][] answer = new int[signs.length][signs[0].length];
-        for (int i = 0; i < answer.length; i++) {
-            for (int j = 0; j < answer[0].length; j++) {
-                answer[i][j] = func2(n, signs);
-            }
+        size = n;
+        data = signs;
+        answer = new int[n][n];
+
+        for (int j = 0; j < size; j++) {
+            bool = new int[size];
+            answer[j] = dfs(j);
         }
         return answer;
     }
 
-    public static int func2(int n, int[][] signs) {
-        int result = 0;
-        for (int i = 0; i < signs.length; i++) {
-            for (int j = 0; j < signs[i].length; j++) {
-                if (n == j) {
-                    result = 1;
-                    return result;
-                } else {
-                    return func2(j, signs);
-                }
+    public static int[] dfs(int i) {
+        for (int j = 0; j < size; j++) {
+            if(bool[j] ==1){
+                continue;
+            }
+
+            if (i != j && data[i][j] == 1) {
+                bool[j] = 1;
+                dfs(j);
             }
         }
-        return result;
+        return bool;
     }
 
     public static void main(String[] args) {
-        int[][] temp = {{0, 1, 0}, {0, 0, 1}, {1, 0, 0}};
+
+        int[][] temp = {{0, 0, 1}, {0, 0, 1}, {0, 1, 0}};
         int[][] arr = solution(3, temp);
         for (int i = 0; i < arr.length; i++) {//행
             for (int j = 0; j < arr[i].length; j++) {//열
@@ -36,7 +43,6 @@ public class BusTravel {
             }//안쪽 for
             System.out.println();
         }//바깥 for
-
     }
 
 }
