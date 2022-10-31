@@ -35,7 +35,7 @@ public class BusTravel {
 
     public static void main(String[] args) {
 
-        int[][] temp = {{0, 0, 1}, {0, 0, 1}, {0, 1, 0}};
+        int[][] temp = {{0, 1, 0}, {0, 0, 1}, {1, 0, 0}};
         int[][] arr = solution(3, temp);
         for (int i = 0; i < arr.length; i++) {//행
             for (int j = 0; j < arr[i].length; j++) {//열
